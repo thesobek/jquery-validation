@@ -148,7 +148,7 @@ grunt.initConfig({
 					return umdStart + umdLocalizationDefine + umdMiddle + content + umdEnd;
 				}
 			},
-			src: "src/localization/*",
+			src: [ "src/localization/*de.js", "src/localization/*uk.js" ],
 			dest: "dist/localization",
 			expand: true,
 			flatten: true,
@@ -180,7 +180,7 @@ grunt.loadNpmTasks("grunt-contrib-copy");
 grunt.loadNpmTasks("grunt-text-replace");
 
 grunt.registerTask("default", [ "concat", "copy", "jscs", "jshint", "qunit" ]);
-grunt.registerTask("release", [ "default", "uglify", "replace", "compress" ]);
+grunt.registerTask("release", [ "default", "uglify", "replace" ]);
 grunt.registerTask("start", [ "concat", "watch" ]);
 
 };
